@@ -1,10 +1,6 @@
 from Modules.configuration import configuration_functions as cf
 
-class dictionary_functions:
-	def pydict_to_jsondict(pydict: dict):
-		import json
-		return json.dumps(pydict)
-	
+class dictionary_functions:	
 	def write_to_json_file(_dict: dict):
 		with open('./outputs/dict.json', 'w') as json_file:
 			import json
