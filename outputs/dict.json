@@ -1,0 +1,61 @@
+{
+    "9E": {
+        "FRI": {
+            "1": "BIOLOGY",
+            "2": "HINDI",
+            "3": "MATHEMATICS",
+            "4": "ENGLISH",
+            "5": "COMPUTER-SCIENCE",
+            "6": "HISTORY-CIVICS",
+            "7": "LIBRARY-LIFESKILLS",
+            "8": "PHYSICS"
+        },
+        "MON": {
+            "1": "CHEMISTRY",
+            "2": "HINDI",
+            "3": "MATHEMATICS",
+            "4": "PHYSICS",
+            "5": "BIOLOGY",
+            "6": "GEOGRAPHY-ECONOMICS",
+            "7": "ENGLISH",
+            "8": "MATHEMATICS"
+        },
+        "THU": {
+            "1": "MATHEMATICS",
+            "2": "PE-YOGA",
+            "3": "GEOGRAPHY-ECONOMICS",
+            "4": "HINDI",
+            "5": "HISTORY-CIVICS",
+            "6": "MATHEMATICS",
+            "7": "ENGLISH",
+            "8": "CHEMISTRY"
+        },
+        "TUE": {
+            "1": "HISTORY-CIVICS",
+            "2": "ENGLISH",
+            "3": "MATHEMATICS",
+            "4": "COMPUTER-SCIENCE",
+            "5": "CHEMISTRY",
+            "6": "HINDI",
+            "7": "PHYSICS",
+            "8": "MATHEMATICS"
+        },
+        "WED": {
+            "1": "CLASS-ASSEMBLY",
+            "2": "MATHEMATICS",
+            "3": "ENGLISH",
+            "4": "BIOLOGY",
+            "5": "GEOGRAPHY-ECONOMICS",
+            "6": "MATHEMATICS",
+            "7": "HINDI",
+            "8": "HISTORY-CIVICS"
+        }
+    },
+    "name": "1339502022.xlsx",
+    "sheets_names": [
+        "Table 1"
+    ],
+    "status": {
+        "true": "200"
+    }
+}

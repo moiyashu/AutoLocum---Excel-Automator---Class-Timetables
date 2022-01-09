@@ -1,21 +1,6 @@
 from Modules.configuration import configuration_functions as cf
 
 class dictionary_functions:
-	def generate_dict(file_path: str):
-		import os
-		_dict = {}
-		_dict['all_sheets'] = []
-		_dict['name'] = os.path.basename(file_path)
-		return _dict
-	
-	def generate_nested_dicts(_dict: dict, class_name):
-		
-		_dict[class_name]['TUE'] = {}
-		_dict[class_name]['wed'] = {}
-		_dict[class_name]['thu'] = {}
-		_dict[class_name]['fri'] = {}
-		return True
-
 	def pydict_to_jsondict(pydict: dict):
 		import json
 		return json.dumps(pydict)

@@ -26,20 +26,27 @@ class configuration_functions:
 			char = char.upper()
 			columns.append(ord(char)-64) # converting into the int type and appeading to it
 			# ord converts it to ASCII value and (caps letter - 64) is the location in english letters
-			
 		return rows, columns
 
 	def get_values_to_replace():
-		_dict = {
-			'HIN(II)' : 'HINDI',
-			'H&C' : 'HISTORY-CIVICS',
-			'LIB/LS' : 'LIBRARY-LIFESKILLS',
-			'PE/YOGA' : 'PE-YOGA',
-			'PHY' : 'PHYSICS',
+		_dict = {			
+			# Languages
 			'ENG' : 'ENGLISH',
-			'CSC' : 'COMPUTER-SCIENCE',
+			'HIN(II)' : 'HINDI',
+			# Math
+			'MATH' : 'MATHEMATICS',
+			# Main Sciences
+			'PHY' : 'PHYSICS',
 			'BIO' : 'BIOLOGY',
 			'CHEM' : 'CHEMISTRY',
-			'MATH' : 'MATHEMATICS'
-		} 
+			# Scocial Sciences
+			'H&C' : 'HISTORY-CIVICS',
+			'GEO&E' : 'GEOGRAPHY-ECONOMICS',
+			# Computers
+			'CSC' : 'COMPUTER-SCIENCE',
+			# Other Periods
+			'ASSEMBLY' : 'CLASS-ASSEMBLY',
+			'PE/YOGA' : 'PE-YOGA',
+			'LIB/LS' : 'LIBRARY-LIFESKILLS'
+		}
 		return _dict.keys(), _dict.values(), _dict
