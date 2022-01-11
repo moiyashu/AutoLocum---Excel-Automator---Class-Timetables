@@ -4,7 +4,7 @@ from Modules.functions import other_functions as other_funcs
 from Modules.dictionary import dictionary_functions as dict_funcs
 from Modules.configuration import configuration_functions as config_funcs
 
-class excel_to_dict():
+class xldict():
 	"""
 	Python program to read the NPS format of excel files
 	Parameters :: file: base64 (file bytes)
@@ -61,10 +61,10 @@ if __name__ == '__main__':
 	file_name = '9E.xlsx'
 	copy_of_input_file = './inputs/'+file_name
 	from shutil import copyfile
-	copyfile('./test_files/'+file_name, copy_of_input_file)
+	copyfile('./test_files/class_timetables/'+file_name, copy_of_input_file)
 
 	# bytes
 	bytes_str = other_funcs.base64_file_encode(copy_of_input_file)
 
 	# core test
-	excel_dict = excel_to_dict(bytes_str).main()
+	excel_dict = xldict(bytes_str).main()
