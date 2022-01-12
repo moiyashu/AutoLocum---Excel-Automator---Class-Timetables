@@ -28,15 +28,31 @@ class other_functions:
 			excel_file.write(decoded_bytes)
 		return path.replace('..', '.')
 
-	def erase_file(file_path: str):
-		import os
-		try:
-			os.remove(file_path)
-			return True
-		except:
-			return False
+	def postion_table(sheet):
+		for value in range(27):
+			for _row, _col in range(value):
+				deletion_value = value-1
+				if sheet.cell(row = _row, column = value).value.upper().startswith('TIMETABLE'):
+					sheet.delete_rows(1, _row-1)
+					sheet.delete_cols(1, deletion_value)
+					final_status = True
+					break
+				elif sheet.cell(row = value, column = _col).value.upper().startswith('TIMETABLE'):
+					sheet.delete_rows(1, deletion_value)
+					sheet.delete_cols(1, _col-1)
+					final_status = True
+					break
+				elif sheet.cell(row = _row, column = _col).value.upper().startswith('TIMETABLE'):
+					sheet.delete_rows(1, deletion_value)
+					sheet.delete_cols(1, _col-1)
+					final_status = True
+					break
+				else:
+					final_status = False
+					pass
+		return final_status
 
-	def get_class(title):
+	def get_class(title: str):
 		class_name0 = title.upper().replace(' ', '').replace('TIMETABLEFORCLASS', '')
 		try: 
 			int(class_name0[:2])
@@ -44,3 +60,11 @@ class other_functions:
 		except:
 			class_name = class_name0[:2]
 		return class_name
+	
+	def erase_file(file_path: str):
+		import os
+		try:
+			os.remove(file_path)
+			return True
+		except:
+			return False

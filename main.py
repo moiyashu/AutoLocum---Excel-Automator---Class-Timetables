@@ -35,7 +35,6 @@ class xldict():
 	
 				class_name = other_funcs.get_class(sheet_now.cell(row = 1, column = 1).value)
 	
-	
 				excel_dict[class_name] = {}
 				for row_id in row_ids:
 					day = (sheet_now.cell(row = row_id, column = 1).value).upper()
