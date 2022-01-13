@@ -29,27 +29,36 @@ class other_functions:
 		return path.replace('..', '.')
 
 	def postion_table(sheet):
-		for value in range(27):
-			for _row, _col in range(value):
+		final_status = False
+		for value in range(2, 27):
+			for _row, _col in zip(range(2, value), range(2, value)):
 				deletion_value = value-1
-				if sheet.cell(row = _row, column = value).value.upper().startswith('TIMETABLE'):
-					sheet.delete_rows(1, _row-1)
-					sheet.delete_cols(1, deletion_value)
+				cell_name_zer_check = str(sheet.cell(row = _row, column = _col).value)
+				cell_name_row_check = str(sheet.cell(row = _row, column = value).value)
+				cell_name_col_check = str(sheet.cell(row = value, column = _col).value)
+				if sheet.cell(row = 1, column = 1).value.upper().replace(' ', '').startswith('TIMETABLE'):
 					final_status = True
 					break
-				elif sheet.cell(row = value, column = _col).value.upper().startswith('TIMETABLE'):
-					sheet.delete_rows(1, deletion_value)
-					sheet.delete_cols(1, _col-1)
-					final_status = True
-					break
-				elif sheet.cell(row = _row, column = _col).value.upper().startswith('TIMETABLE'):
-					sheet.delete_rows(1, deletion_value)
-					sheet.delete_cols(1, _col-1)
-					final_status = True
-					break
+				elif cell_name_row_check is not None:
+					if cell_name_row_check.upper().replace(' ', '').startswith('TIMETABLE'):
+						sheet.delete_rows(1, _row-1)
+						sheet.delete_cols(1, deletion_value)
+						final_status = True
+						break
+				elif cell_name_row_check is not None:
+					if cell_name_col_check.upper().replace(' ', '').startswith('TIMETABLE'):
+						sheet.delete_rows(1, deletion_value)
+						sheet.delete_cols(1, _col-1)
+						final_status = True
+						break
+				elif cell_name_row_check is not None:
+					if cell_name_zer_check.upper().replace(' ', '').startswith('TIMETABLE'):
+						sheet.delete_rows(1, _row-1)
+						sheet.delete_cols(1, _col-1)
+						final_status = True
+						break
 				else:
 					final_status = False
-					pass
 		return final_status
 
 	def get_class(title: str):

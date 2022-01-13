@@ -32,6 +32,9 @@ class xldict():
 				excel_dict['sheets_names'].append(sheet_now.title)
 	
 				row_ids, column_ids = config_funcs.rows_and_columns()
+
+				table_reposition_stat = other_funcs.postion_table(sheet_now)
+				print("TABLE REPOSITIONING STATUS : "+ str(table_reposition_stat))
 	
 				class_name = other_funcs.get_class(sheet_now.cell(row = 1, column = 1).value)
 	
