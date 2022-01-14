@@ -1,32 +1,33 @@
 class configuration_functions:
-	def rows_and_columns():
-		rows = [ # rows to check
-			6, 
-			7, 
-			8, 
-			9, 
-			10
-		]
-		
-		# will have to chgange this to numbers, stays this way for convinence for now. later numbers only and no for loop fr it
-		columns_chartype_id = [ # columns to check
-			# 'B', - "Cl. Teacher" (period)
-			'C', 
-			'D', 
-			'F', 
-			'G', 
-			'I', 
-			'J', 
-			'L', 
-			'M'
-		]
+	def class_timetables_rows_n_cols():
+		_dict = {
+			"rows_int" : [ # rows to check
+				6, 
+				7, 
+				8, 
+				9, 
+				10
+			], "cols_char" : [ # columns to check
+				# 'B', - "Cl. Teacher" (period)
+				'C', 
+				'D', 
+				'F', 
+				'G', 
+				'I', 
+				'J',
+				'L', 
+				'M'
+			]
+		}
 
-		columns = [] # creating a int type of the letters location from ^ columns_chartype_id ^
-		for char in columns_chartype_id: 
-			char = char.upper()
-			columns.append(ord(char)-64) # converting into the int type and appeading to it
-			# ord converts it to ASCII value and (caps letter - 64) is the location in english letters
-		return rows, columns
+		l = []
+		for c in _dict["cols_char"]:
+			l.append(ord(c.upper())-64) # converting into the int type and appeading to it
+			# ord converts it to ASCII value and (capital letter - 64) is the location in english letters
+			# this is to be subtracted by 96 instead of 64 for get the location when in lowercase letters
+		_dict["cols_int"] = l
+	
+		return _dict
 
 	def get_values_to_replace():
 		_dict = {			
@@ -49,4 +50,4 @@ class configuration_functions:
 			'PE/YOGA' : 'PE-YOGA',
 			'LIB/LS' : 'LIBRARY-LIFESKILLS'
 		}
-		return _dict.keys(), _dict.values(), _dict
+		return _dict

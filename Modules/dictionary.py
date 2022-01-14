@@ -1,8 +1,9 @@
 from Modules.configuration import configuration_functions as cf
 
-class dictionary_functions:	
+class dictionary_functions:
 	def rename_period(name: str):
-		keys, values, replacements_dict = cf.get_values_to_replace()
+		replacements_dict = cf.get_values_to_replace()
+		keys = replacements_dict.keys()
 		if name in keys:
 			for key in keys:
 				if name == key:

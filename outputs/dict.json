@@ -51,11 +51,10 @@
             "8": "HISTORY-CIVICS"
         }
     },
-    "name": "1411072022.xlsx",
+    "exception": "None",
+    "name": "1518522022.xlsx",
     "sheets_names": [
         "Table 1"
     ],
-    "status": {
-        "true": "200"
-    }
+    "status": true
 }
