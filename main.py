@@ -61,7 +61,7 @@ class xldict():
 if __name__ == '__main__':
 	# accessing sample
 	file_name = '9E.xlsx'
-	copy_of_input_file = './inputs/'+file_name
+	copy_of_input_file = './inputs/class_timetables/'+file_name
 	from shutil import copyfile
 	copyfile('./test_files/class_timetables/'+file_name, copy_of_input_file)
 
