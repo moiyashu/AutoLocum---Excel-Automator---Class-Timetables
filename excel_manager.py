@@ -64,6 +64,8 @@ class xldict():
 				excel_dict = {'status' : False, "exception" : f_exception}
 		except Exception as e:
 			excel_dict = {'status' : False, "exception" : str(e)}
+
+		# Non-Production Json-Dict file-write soley for testing
 		try:
 			json_write_file_status = dict_funcs.write_to_json_file(excel_dict)
 			print("JSON FILE WRITE : " + str(json_write_file_status))
@@ -71,6 +73,7 @@ class xldict():
 			f_exception = "JSON FILE WRITE : " + str(False) + " [FATAL FAIL]" + "\n" + str(e)
 			print(f_exception)
 			excel_dict = {'status' : False, "exception" : f_exception}
+
 		return excel_dict
 
 # test 
