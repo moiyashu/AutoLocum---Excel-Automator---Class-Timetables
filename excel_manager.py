@@ -39,7 +39,7 @@ class xldict():
 					table_reposition_stat = other_funcs.postion_table(sheet_now)
 					print("TABLE REPOSITIONING STATUS : " + str(table_reposition_stat))
 				except Exception as e:
-					f_exception = "TABLE REPOSITIONING STATUS : " + str(False) + "[FATAL FAIL]" + "\n" + str(e)
+					f_exception = "TABLE REPOSITIONING STATUS : " + str(False) + " [FATAL FAIL]" + "\n" + str(e)
 					print(f_exception)
 					excel_dict = {'status' : False, 'exception' : f_exception}
 	
@@ -59,7 +59,7 @@ class xldict():
 				deletion_status_0 = other_funcs.erase_file(excel_file)
 				print("TEMPORARY EXCEL WORKBOOK DELETION : " + str(deletion_status_0))
 			except Exception as e:
-				f_exception = "TEMPORARY EXCEL WORKBOOK DELETION : " + str(False) + "[FATAL FAIL]" + "\n" + str(e)
+				f_exception = "TEMPORARY EXCEL WORKBOOK DELETION : " + str(False) + " [FATAL FAIL]" + "\n" + str(e)
 				print(f_exception)
 				excel_dict = {'status' : False, "exception" : f_exception}
 		except Exception as e:
@@ -68,7 +68,7 @@ class xldict():
 			json_write_file_status = dict_funcs.write_to_json_file(excel_dict)
 			print("JSON FILE WRITE : " + str(json_write_file_status))
 		except Exception as e:
-			f_exception = "JSON FILE WRITE : " + str(False) + "[FATAL FAIL]" + "\n" + str(e)
+			f_exception = "JSON FILE WRITE : " + str(False) + " [FATAL FAIL]" + "\n" + str(e)
 			print(f_exception)
 			excel_dict = {'status' : False, "exception" : f_exception}
 		return excel_dict
@@ -76,7 +76,7 @@ class xldict():
 # test 
 if __name__ == '__main__':
 	# accessing sample
-	file_name = '9E.xlsx'
+	file_name = '9E - Cell Rearrangement Test.xlsx'
 	copy_of_input_file = './inputs/class_timetables/'+file_name
 	from shutil import copyfile
 	copyfile('./test_files/class_timetables/'+file_name, copy_of_input_file)

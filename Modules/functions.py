@@ -33,25 +33,27 @@ class other_functions:
 		for value in range(2, 27):
 			for _row, _col in zip(range(2, value), range(2, value)):
 				deletion_value = value-1
-				cell_name_zer_check = str(sheet.cell(row = _row, column = _col).value)
-				cell_name_row_check = str(sheet.cell(row = _row, column = value).value)
-				cell_name_col_check = str(sheet.cell(row = value, column = _col).value)
-				if sheet.cell(row = 1, column = 1).value.upper().replace(' ', '').startswith('TIMETABLE'):
-					final_status = True
-					break
-				elif cell_name_row_check is not None:
+				cell_name_one_check = sheet.cell(row = 1, column = 1).value
+				cell_name_zer_check = sheet.cell(row = _row, column = _col).value
+				cell_name_row_check = sheet.cell(row = _row, column = value).value
+				cell_name_col_check = sheet.cell(row = value, column = _col).value
+				if not isinstance(cell_name_one_check, type(None)):
+					if cell_name_one_check.upper().replace(' ', '').startswith('TIMETABLE'):
+						final_status = True
+						break
+				elif not isinstance(cell_name_row_check, type(None)):
 					if cell_name_row_check.upper().replace(' ', '').startswith('TIMETABLE'):
 						sheet.delete_rows(1, _row-1)
 						sheet.delete_cols(1, deletion_value)
 						final_status = True
 						break
-				elif cell_name_row_check is not None:
+				elif not isinstance(cell_name_col_check, type(None)):
 					if cell_name_col_check.upper().replace(' ', '').startswith('TIMETABLE'):
 						sheet.delete_rows(1, deletion_value)
 						sheet.delete_cols(1, _col-1)
 						final_status = True
 						break
-				elif cell_name_row_check is not None:
+				elif not isinstance(cell_name_zer_check, type(None)):
 					if cell_name_zer_check.upper().replace(' ', '').startswith('TIMETABLE'):
 						sheet.delete_rows(1, _row-1)
 						sheet.delete_cols(1, _col-1)
