@@ -1,4 +1,5 @@
 from os.path import basename
+import json
 
 from Modules.functions import other_functions as other_funcs
 from Modules.dictionary import dictionary_functions as dict_funcs
@@ -65,6 +66,7 @@ class xldict():
 		except Exception as e:
 			excel_dict = {'status' : False, "exception" : str(e)}
 
+		"""
 		# Non-Production Json-Dict file-write soley for testing
 		try:
 			json_write_file_status = dict_funcs.write_to_json_file(excel_dict)
@@ -73,9 +75,11 @@ class xldict():
 			f_exception = "JSON FILE WRITE : " + str(False) + " [FATAL FAIL]" + "\n" + str(e)
 			print(f_exception)
 			excel_dict = {'status' : False, "exception" : f_exception}
+		"""
 
-		return excel_dict
+		return json.dumps(excel_dict, indent = 4)
 
+"""
 # test 
 if __name__ == '__main__':
 	# accessing sample
@@ -89,3 +93,7 @@ if __name__ == '__main__':
 
 	# core test
 	excel_dict = xldict(bytes_str).class_timetable()
+
+	# print it
+	print(excel_dict)
+"""
